@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabium — Guía Rápida + Presupuesto</title>
+<link rel="icon" href="img/ISOTIPO_ISOTIPO.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --navy: #1C2B4A;
+  --navy2: #263a61;
+  --salmon: #E8837A;
+  --teal: #4DBDB5;
+  --yellow: #F5C842;
+  --light: #F4F6FA;
+  --gray: #8892A4;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--light);
+  color: var(--navy);
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--navy);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.header-blob {
+  position: absolute; top: -60px; right: -60px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(77,189,181,0.15), transparent 70%);
+}
+.header-blob2 {
+  position: absolute; bottom: -40px; left: 30%;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,131,122,0.12), transparent 70%);
+}
+.header-inner {
+  max-width: 760px; margin: 0 auto;
+  padding: 48px 32px 40px;
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 32px;
+}
+.logo-mark {
+  width: 64px; height: 64px; border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.logo-mark svg { width: 36px; height: 36px; }
+.header-text h1 {
+  font-size: 28px; font-weight: 800; color: var(--white);
+  line-height: 1.1; margin-bottom: 6px;
+}
+.header-text h1 span { color: var(--salmon); }
+.header-text p { font-size: 14px; color: rgba(255,255,255,0.5); }
+.header-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--salmon) 50%, var(--yellow) 100%);
+}
+
+/* ── WHAT IS ── */
+.what-is {
+  background: var(--white);
+  border-bottom: 1px solid rgba(28,43,74,0.07);
+}
+.what-is-inner {
+  max-width: 760px; margin: 0 auto;
+  padding: 36px 32px;
+}
+.what-is-inner p {
+  font-size: 15px; color: var(--navy); line-height: 1.7;
+  max-width: 680px;
+}
+.what-is-inner p strong { color: var(--teal); }
+.not-list {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+}
+.not-tag {
+  background: var(--light);
+  border: 1px solid rgba(28,43,74,0.1);
+  color: var(--gray);
+  font-size: 12px; font-weight: 600;
+  padding: 5px 12px; border-radius: 100px;
+}
+.not-tag::before { content: '✕  '; color: var(--salmon); }
+
+/* ── SECTION CONTAINER ── */
+.container { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+/* ── ROLE SECTIONS ── */
+.role-section { padding: 44px 0; }
+.role-section + .role-section { border-top: 1px solid rgba(28,43,74,0.07); }
+
+.role-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+}
+.role-pill {
+  font-size: 11px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; padding: 6px 16px; border-radius: 100px;
+}
+.pill-directivo { background: rgba(77,189,181,0.12); color: #2a8f88; }
+.pill-docente { background: rgba(232,131,122,0.12); color: #c4574e; }
+.role-title { font-size: 22px; font-weight: 800; color: var(--navy); }
+.role-sub { font-size: 13px; color: var(--gray); margin-top: 2px; }
+
+/* ── STEP CARDS ── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.step-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 20px;
+  border: 1.5px solid rgba(28,43,74,0.06);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.step-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(28,43,74,0.09); }
+.step-num {
+  font-size: 42px; font-weight: 900; line-height: 1;
+  position: absolute; top: 10px; right: 14px;
+  opacity: 0.07; color: var(--navy);
+}
+.step-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px; font-size: 17px;
+}
+.icon-teal { background: rgba(77,189,181,0.12); }
+.icon-salmon { background: rgba(232,131,122,0.12); }
+.icon-navy { background: rgba(28,43,74,0.08); }
+.icon-yellow { background: rgba(245,200,66,0.15); }
+.step-card h3 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.step-card p { font-size: 12px; color: var(--gray); line-height: 1.55; }
+
+/* ── HOW TO ACCESS ── */
+.access-section {
+  background: var(--navy);
+  padding: 36px 0;
+}
+.access-inner {
+  max-width: 760px; margin: 0 auto; padding: 0 32px;
+}
+.access-inner h2 {
+  font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 20px;
+}
+.access-steps {
+  display: flex; gap: 0; flex-wrap: wrap;
+}
+.access-step {
+  display: flex; align-items: flex-start; gap: 14px;
+  flex: 1; min-width: 180px;
+  padding: 0 20px 0 0;
+}
+.access-step:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.08);
+  margin-right: 20px;
+}
+.access-num {
+  width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+  background: var(--teal);
+  font-size: 13px; font-weight: 800; color: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+}
+.access-step h4 { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+.access-step p { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+/* ── TIP BOX ── */
+.tip {
+  background: rgba(245,200,66,0.1);
+  border-left: 3px solid var(--yellow);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px; margin-top: 16px;
+}
+.tip p { font-size: 12.5px; color: var(--navy); line-height: 1.55; }
+.tip strong { font-weight: 700; }
+
+/* ── NO ES LIST ── */
+.no-es-section {
+  background: var(--white);
+  border-top: 1px solid rgba(28,43,74,0.07);
+  border-bottom: 1px solid rgba(28,43,74,0.07);
+  padding: 28px 0;
+}
+.no-es-inner {
+  max-width: 760px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap;
+}
+.no-es-label {
+  font-size: 11px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--salmon);
+  padding-top: 4px; flex-shrink: 0;
+  min-width: 100px;
+}
+.no-es-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.no-tag {
+  background: rgba(232,131,122,0.07);
+  border: 1px solid rgba(232,131,122,0.2);
+  color: #c4574e;
+  font-size: 12px; font-weight: 600;
+  padding: 5px 12px; border-radius: 100px;
+}
+
+/* ── CTA SECTION ── */
+.cta-section {
+  padding: 44px 0;
+}
+.cta-card {
+  max-width: 760px; margin: 0 auto; padding: 0 32px;
+}
+.cta-inner {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 36px 40px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 24px; flex-wrap: wrap;
+  text-align: center;
+}
+.cta-bg {
+  position: absolute; right: -40px; top: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(77,189,181,0.15), transparent 70%);
+}
+.cta-text h2 { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+.cta-text p { font-size: 13.5px; color: rgba(255,255,255,0.5); }
+.cta-actions { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; position: relative; z-index: 1; align-items: center; justify-content: center; text-align: center; }
+.cta-actions img { display: block; margin: 0 auto; }
+.btn-primary {
+  background: var(--salmon); color: var(--white);
+  font-size: 13px; font-weight: 700;
+  padding: 12px 24px; border-radius: 100px;
+  text-decoration: none; text-align: center; display: block;
+  font-family: 'Poppins', sans-serif;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  font-size: 12px; font-weight: 600;
+  padding: 10px 24px; border-radius: 100px;
+  text-decoration: none; text-align: center; display: block;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy);
+  padding: 20px 32px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer p { font-size: 12px; color: rgba(255,255,255,0.3); }
+.footer a { color: var(--teal); text-decoration: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .access-step:not(:last-child) { border-right: none; margin-right: 0; padding-right: 0; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px; }
+  .access-steps { flex-direction: column; }
+  .cta-inner { flex-direction: column; }
+  .steps-grid { grid-template-columns: 1fr; }
+}
+
+.section-bg { background: var(--white); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-blob"></div>
+  <div class="header-blob2"></div>
+  <div class="header-inner">
+    <div class="logo-mark"> 
+        <img src="img/ISOTIPO_ISOTIPO.png" alt="Isotipo de Sabium en blanco dentro de un recuadro redondeado azul oscuro en el encabezado de la guía, diseño simple y profesional con tono moderno y confiable, sin texto visible" style="width:100%; height:100%;"> 
+    </div>
+    <div class="header-text">
+      <h1>Guía rápida <span>Sabium</span></h1>
+      <p>Todo lo que necesitás saber · Docentes y Directivos · www.sabium.com.ar</p>
+    </div>
+  </div>
+  <div class="header-bar"></div>
+</header>
+
+<!-- QUÉ ES -->
+<div class="what-is">
+  <div class="what-is-inner">
+    <p>
+      Sabium es una plataforma de <strong>gestión pedagógica</strong> pensada para toda la institución. Los directivos y coordinadores ven en tiempo real qué pasa en cada aula — planificaciones, clases dadas, postergadas, contenidos trabajados. Los docentes planifican desde el diseño curricular del colegio y reorganizan sus clases ante cualquier imprevisto, automáticamente.  Además, todas las planificaciones quedan guardadas, pudiendo reutilizarse y tambien para obtener métricas reales en cualquier momento.
+      </p>
+  </div>
+</div>
+
+<!-- NO ES -->
+<div class="no-es-section">
+  <div class="no-es-inner">
+    <div class="no-es-label">Importante</div>
+    <div style="flex:1; font-size:13px; color:var(--navy); line-height:1.65;">
+      Sabium no es sólo un lugar donde escribís planificaciones. Es un sistema que las <strong>calendariza</strong>: las ubica en días y horarios reales, las ajusta ante imprevistos y las hace visibles para el directivo en tiempo real — sin compartir documentos, ni enviar nada por WhatsApp ni email.
+    </div>
+  </div>
+</div>
+
+<!-- CÓMO ACCEDER -->
+<div class="access-section">
+  <div class="access-inner">
+    <h2>Cómo ingresar — igual para todos</h2>
+    <div class="access-steps">
+      <div class="access-step">
+        <div class="access-num">1</div>
+        <div>
+          <h4>Entrá a www.sabium.com.ar</h4>
+          <p>Desde cualquier navegador.</p>
+        </div>
+      </div>
+      <div class="access-step">
+        <div class="access-num">2</div>
+        <div>
+          <h4>Ingresá tus datos</h4>
+          <p>DNI sin puntos, contraseña asignada y seleccioná tu institución.</p>
+        </div>
+      </div>
+      <div class="access-step">
+        <div class="access-num">3</div>
+        <div>
+          <h4>Hacé clic en Acceder</h4>
+          <p>El sistema te lleva directo a tu panel según tu rol.</p>
+        </div>
+      </div>
+      <div class="access-step">
+        <div class="access-num" style="background:var(--salmon);">?</div>
+        <div>
+          <h4>¿Olvidaste la clave?</h4>
+          <p>Usá el enlace "¿Olvidó su clave?" en la pantalla de ingreso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIRECTIVOS -->
+<div class="section-bg">
+<div class="container">
+<div class="role-section">
+  <div class="role-header">
+    <span class="role-pill pill-directivo">Directivos · Coordinadores · Rectores</span>
+  </div>
+  <div class="role-title">Lo que podés hacer como directivo</div>
+  <div class="role-sub">Todo desde el menú MONITOREO, BIBLIOTECA y MÉTRICAS</div>
+
+  <br>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-icon icon-teal">👁</div>
+      <h3>Monitorear en tiempo real</h3>
+      <p>Desde MONITOREO podés filtrar por nivel, turno, docente, curso o materia y ver exactamente qué se planificó, qué se dio y qué está pendiente.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-icon icon-navy">📅</div>
+      <h3>3 vistas del calendario</h3>
+      <p><strong>Por cursos:</strong> panorama de hoy por división.<br><strong>Semanal:</strong> detalle día a día.<br><strong>Mensual:</strong> visión general del mes.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-icon icon-salmon">💬</div>
+      <h3>Revisar y dar feedback</h3>
+      <p>Podes ingresar a cualquier clase para ver el detalle, dejar comentarios al docente y cambiar el estado a Aprobada, Observada o Rechazada.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-icon icon-teal">📊</div>
+      <h3>Reportes de planificación</h3>
+      <p>Desde BIBLIOTECA generás reportes por docente, materia o fechas. Formato Simplificado o Ampliado (con detalle de cada clase, estrategia y evaluación).</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-icon icon-yellow">📈</div>
+      <h3>Métricas institucionales</h3>
+      <p>Desde MÉTRICAS analizás qué tipos de evaluación, estrategias metodológicas y formatos de planificación usa cada docente o el equipo completo.  También podés ver avances de contenidos de cualquier curso y materia</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">6</div>
+      <div class="step-icon icon-navy">🔔</div>
+      <h3>Notificaciones automáticas</h3>
+      <p>El docente recibe notificación cuando dejás un comentario. Vos podés navegar entre clases del mismo docente con las flechas ‹ › sin volver al calendario.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <p><strong>Tip de uso rápido:</strong> Para el monitoreo del día a día filtrá por Nivel + Turno en vista "Por cursos". Para seguimiento individual filtrá por docente y usá el reporte Ampliado antes de reuniones de coordinación — tenés todo sin pedirle nada al docente.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- DOCENTES -->
+<div style="background: var(--light);">
+<div class="container">
+<div class="role-section">
+  <div class="role-header">
+    <span class="role-pill pill-docente">Docentes · Profesores · Maestros</span>
+  </div>
+  <div class="role-title">Lo que podés hacer como docente</div>
+  <div class="role-sub">Todo desde tu panel principal al ingresar</div>
+
+  <br>
+
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-icon icon-salmon">📋</div>
+      <h3>Crear una planificación</h3>
+      <p>Seleccionás los ejes y contenidos del diseño curricular de tu colegio (ya está cargado), ponés el título, el tipo y la cantidad de clases. Sabium las calendariza automáticamente.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-icon icon-teal">✏️</div>
+      <h3>Completar cada clase</h3>
+      <p>Ingresando a cada clase completas: <strong>Estrategia metodológica</strong> (cómo enseñás), <strong>Evaluación</strong> (qué tipo) y <strong>Actividad</strong> (descripción libre de lo que hacen los alumnos).</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-icon icon-navy">🔄</div>
+      <h3>Recalendarizar imprevistos</h3>
+      <p>Si hay un feriado o suspensión, podes recalendarizar, arrastrando la clase a una celda disponible y confirmá. Las clases siguientes se reacomodan automáticamente en orden.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-icon icon-salmon">💬</div>
+      <h3>Ver el feedback del directivo</h3>
+      <p>Cuando tu directivo deja un comentario recibís una notificación. Lo ves dentro del detalle de esa clase, en el campo "Comentarios del Director". También ves el estado que le asignó: Aprobada, Observada, etc.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-icon icon-yellow">📊</div>
+      <h3>Reportes de planificación</h3>
+      <p>Desde BIBLIOTECA generás reportes por curso, materia o fechas. Formato Simplificado o Ampliado (con detalle de cada clase, estrategia y evaluación).</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">6</div>
+      <div class="step-icon icon-teal">📈</div>
+      <h3>Métricas institucionales</h3>
+      <p> Desde MÉTRICAS puedes consultar gráficos detallados sobre el rendimiento de cada estrategia, tipos de evaluación y los formatos con mayor frecuencia. Te ayuda a detectar patrones y decidir mejor en autoevaluaciones y reuniones de equipo.</p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <p><strong>Importante:</strong> Tu directivo puede ver tus planificaciones en tiempo real desde que las calendarizás. No recibís notificación cuando las mira — sí cuando deja un comentario. Los contenidos en amarillo en el selector ya fueron usados en otra planificación tuya.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ESTADOS RÁPIDOS -->
+<div class="section-bg" style="border-top: 1px solid rgba(28,43,74,0.07); border-bottom: 1px solid rgba(28,43,74,0.07);">
+  <div class="container" style="padding-top:32px; padding-bottom:32px;">
+    <div style="font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-bottom:16px;">Estados de las planificaciones</div>
+    <div style="display:flex; flex-wrap:wrap; gap:10px;">
+      <div style="background:rgba(77,189,181,0.1); border:1px solid rgba(77,189,181,0.25); border-radius:10px; padding:12px 16px; flex:1; min-width:140px;">
+        <div style="font-size:12px; font-weight:700; color:#2a8f88; margin-bottom:4px;">✓ Aprobada</div>
+        <div style="font-size:12px; color:var(--gray);">El directivo revisó y aprobó la planificación.</div>
+      </div>
+      <div style="background:rgba(245,200,66,0.1); border:1px solid rgba(245,200,66,0.3); border-radius:10px; padding:12px 16px; flex:1; min-width:140px;">
+        <div style="font-size:12px; font-weight:700; color:#9a7a00; margin-bottom:4px;">👁 Observada</div>
+        <div style="font-size:12px; color:var(--gray);">Hay comentarios o sugerencias del directivo para revisar.</div>
+      </div>
+      <div style="background:rgba(232,131,122,0.1); border:1px solid rgba(232,131,122,0.25); border-radius:10px; padding:12px 16px; flex:1; min-width:140px;">
+        <div style="font-size:12px; font-weight:700; color:#c4574e; margin-bottom:4px;">✕ Rechazada</div>
+        <div style="font-size:12px; color:var(--gray);">El directivo indicó que la planificación requiere cambios.</div>
+      </div>
+      <div style="background:var(--light); border:1px solid rgba(28,43,74,0.1); border-radius:10px; padding:12px 16px; flex:1; min-width:140px;">
+        <div style="font-size:12px; font-weight:700; color:var(--navy); margin-bottom:4px;">— Sin estado</div>
+        <div style="font-size:12px; color:var(--gray);">Cargada pero aún no revisada por el directivo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRESUPUESTO -->
+<div style="background:#ffffff; border-top:1px solid rgba(28,43,74,0.07); border-bottom:1px solid rgba(28,43,74,0.07); padding: 44px 0;">
+  <div class="container">
+    <div style="font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#E8837A; margin-bottom:8px;">Presupuesto</div>
+    <div style="font-size:22px; font-weight:800; color:#1C2B4A; margin-bottom:8px;">¿Cuánto se invierte en Sabium?</div>
+    <div style="font-size:14px; color:#8892A4; margin-bottom:28px; max-width:580px; line-height:1.6;">El precio se calcula según las características de cada institución: cantidad de docentes, niveles educativos y turnos. Existen 3 planes básicos pero adaptables a cada institución.</div>
+
+    <div style="background:#F5C842; border-radius:14px; padding:18px 24px; display:flex; align-items:center; gap:16px; margin-bottom:28px; flex-wrap:wrap;">
+      <div style="font-size:26px;">🎉</div>
+      <div style="flex:1;">
+        <div style="font-size:14px; font-weight:800; color:#1C2B4A;">Promoción de lanzamiento — 50% de descuento</div>
+        <div style="font-size:13px; color:rgba(28,43,74,0.65); margin-top:2px;">Por tiempo limitado, los primeros colegios en contratar acceden a la mitad del precio regular. El descuento queda fijo durante 6 meses.</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-bottom:24px;">
+      <div style="background:#F4F6FA; border-radius:14px; padding:22px 20px; border:1.5px solid rgba(28,43,74,0.06); text-align:center;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#4DBDB5; margin-bottom:10px;">Institución pequeña</div>
+        <div style="font-size:11px; color:#8892A4; margin-bottom:8px;">Valor por curso para 6/7 cursos · 1 nivel · 1 turno </div>
+        <div style="font-size:13px; color:#8892A4; text-decoration:line-through; margin-bottom:4px;">$160.000 / mes</div>
+        <div style="font-size:30px; font-weight:900; color:#1C2B4A; line-height:1;">$80.000</div>
+        <div style="font-size:11px; color:#4DBDB5; font-weight:700; margin-top:6px;">con 50% de descuento</div>
+      </div>
+      <div style="background:#1C2B4A; border-radius:14px; padding:22px 20px; border:2px solid #4DBDB5; text-align:center; position:relative;">
+        <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#4DBDB5; color:#1C2B4A; font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 14px; border-radius:100px; white-space:nowrap;">Más elegido</div>
+        <div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#4DBDB5; margin-bottom:10px;">Institución mediana</div>
+        <div style="font-size:11px; color:rgba(255,255,255,0.45); margin-bottom:8px;">Valor por curso para 12/15 cursos · 2 niveles · 2 turnos </div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.3); text-decoration:line-through; margin-bottom:4px;">$136.000 / mes</div>
+        <div style="font-size:30px; font-weight:900; color:#ffffff; line-height:1;">$68.000</div>
+        <div style="font-size:11px; color:#4DBDB5; font-weight:700; margin-top:6px;">con 50% de descuento</div>
+      </div>
+      <div style="background:#F4F6FA; border-radius:14px; padding:22px 20px; border:1.5px solid rgba(28,43,74,0.06); text-align:center;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8837A; margin-bottom:10px;">Institución grande</div>
+        <div style="font-size:11px; color:#8892A4; margin-bottom:8px;">Valor por curso para mas de 15 cursos ( múltiples niveles y turnos )</div>
+        <div style="font-size:13px; color:#8892A4; text-decoration:line-through; margin-bottom:4px;">$120.000 / mes</div>
+        <div style="font-size:30px; font-weight:900; color:#1C2B4A; line-height:1;">$60.000</div>
+        <div style="font-size:11px; color:#4DBDB5; font-weight:700; margin-top:6px;">con 50% de descuento</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(77,189,181,0.07); border:1px solid rgba(77,189,181,0.2); border-radius:12px; padding:18px 22px; margin-bottom:14px;">
+      <div style="font-size:12px; font-weight:700; color:#4DBDB5; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px;">Todos los planes incluyen</div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px;">
+        <span style="font-size:12px; color:#1C2B4A; background:#ffffff; padding:5px 12px; border-radius:100px; border:1px solid rgba(28,43,74,0.08);">✓ Implementación acompañada</span>
+        <span style="font-size:12px; color:#1C2B4A; background:#ffffff; padding:5px 12px; border-radius:100px; border:1px solid rgba(28,43,74,0.08);">✓ Soporte continuo</span>
+        <span style="font-size:12px; color:#1C2B4A; background:#ffffff; padding:5px 12px; border-radius:100px; border:1px solid rgba(28,43,74,0.08);">✓ Diseño curricular propio cargado</span>
+        <span style="font-size:12px; color:#1C2B4A; background:#ffffff; padding:5px 12px; border-radius:100px; border:1px solid rgba(28,43,74,0.08);">✓ Usuarios ilimitados del equipo directivo</span>
+        <span style="font-size:12px; color:#1C2B4A; background:#ffffff; padding:5px 12px; border-radius:100px; border:1px solid rgba(28,43,74,0.08);">✓ Actualizaciones incluidas</span>
+      </div>
+    </div>
+
+    <div style="font-size:12px; color:#8892A4;">* Precios de referencia en pesos argentinos. El presupuesto final se personaliza según tu institución. Este presupuesto tiene vigencia por 15 días a partir de la fecha de recepción. Escribinos para recibir una cotización exacta sin compromiso.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-card">
+    <div class="cta-inner">
+      <div class="cta-bg"></div>
+      <div class="cta-text" style="position:relative;z-index:1;">
+        <h2>¿Querés ver Sabium en vivo?</h2>
+        <p>Una reunión breve de 20 minutos y sin compromiso. Mostramos en pantalla el funcionamiento esencial de la plataforma.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://wa.me/1170668346" class="btn-primary" >Escibinos a nuestro Whatsapp →</a>
+        <a href="https://www.sabium.com.ar" class="btn-secondary">www.sabium.com.ar</a>
+        <img src="img/LOGO.png" alt="Sabium2" style="width:300px; height:86,7px; filter: drop-shadow(0 0 1px rgba(0,0,0,.25)); "/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Sabium · Plataforma de gestión pedagógica institucional · <a href="https://www.sabium.com.ar">www.sabium.com.ar</a> · <a href="/cdn-cgi/l/email-protection#deb7b0b8b19eadbfbcb7abb3f0bdb1b3f0bfac"><span class="
