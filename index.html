@@ -239,6 +239,7 @@ body {
 .cta-text p { font-size: 13.5px; color: rgba(255,255,255,0.5); }
 .cta-actions { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; position: relative; z-index: 1; align-items: center; justify-content: center; text-align: center; }
 .cta-actions img { display: block; margin: 0 auto; }
+.cta-logo { width: min(300px, 100%); height: auto; filter: drop-shadow(0 0 1px rgba(0,0,0,.25)); }
 .btn-primary {
   background: var(--salmon); color: var(--white);
   font-size: 13px; font-weight: 700;
@@ -272,6 +273,11 @@ body {
   .access-step:not(:last-child) { border-right: none; margin-right: 0; padding-right: 0; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 16px; }
   .access-steps { flex-direction: column; }
   .cta-inner { flex-direction: column; }
+  .cta-card { padding: 0 16px; }
+  .cta-inner { padding: 28px 16px; gap: 18px; }
+  .cta-text { width: 100%; max-width: 320px; margin: 0 auto; }
+  .cta-actions { width: 100%; max-width: 320px; flex-shrink: 1; }
+  .btn-primary, .btn-secondary { width: 100%; }
   .steps-grid { grid-template-columns: 1fr; }
 }
 
@@ -560,7 +566,7 @@ body {
       <div class="cta-actions">
         <a href="https://wa.me/1170668346" class="btn-primary" >Escibinos a nuestro Whatsapp →</a>
         <a href="https://www.sabium.com.ar" class="btn-secondary">www.sabium.com.ar</a>
-        <img src="img/LOGO.png" alt="Sabium2" style="width:300px; height:86,7px; filter: drop-shadow(0 0 1px rgba(0,0,0,.25)); "/>
+        <img src="img/LOGO.png" alt="Sabium2" class="cta-logo"/>
       </div>
     </div>
   </div>
